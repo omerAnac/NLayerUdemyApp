@@ -47,6 +47,7 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(conteinerBuiler => conteinerBuiler.RegisterModule(new RepoServiceModule()));
+builder.Services.AddMemoryCache();
 
 
 var app = builder.Build();
